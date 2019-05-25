@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
+import ShareModal from './shareModal.jsx';
 
 const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
@@ -13,7 +14,16 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const PageContainer = styled.div`
+  display: ${props => props.isModalShowing ? "block" : "none"};
+  opacity: ${props => props.isModalShowing ? "0.5" : "0.0"};
+  background: transparent;
+  width: 100%;
+  height: 100vh;
+`;
+
+const ListingContainer = styled.div`
   width: 1410px;
+  max-height: 100vh;
   margin: 0.1rem 1rem 0 1.5rem;
 `;
 
@@ -22,10 +32,14 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isSearchSelected: false
+      isSearchSelected: false,
+      isShowingShareModal: false,
+      isShareModalSelected: false
     };
 
     this.toggleSearchGrow = this.toggleSearchGrow.bind(this);
+    this.toggleShareModal = this.toggleShareModal.bind(this);
+    this.selectShareModal = this.selectShareModal.bind(this);
   }
 
   toggleSearchGrow() {
@@ -34,20 +48,42 @@ class App extends React.Component {
     });
   }
 
+  toggleShareModal() {
+    this.setState({
+      isShowingShareModal: !this.state.isShowingShareModal,
+      isShareModalSelected: false
+    });
+  }
 
+  selectShareModal() {
+    this.setState({
+      isShareModalSelected: true
+    });
+  }
 
 
   render() {
     return (
-      <div onClick={() => this.state.isSearchSelected ? this.toggleSearchGrow() : undefined}> 
-        <GlobalStyle />
-        <Banner
-          isSearching={this.state.isSearchSelected}
-          toggleSearchGrow={this.toggleSearchGrow}
+      <div>
+        <ShareModal
+          toggleShareModal={this.toggleShareModal}
+          selectModal={this.selectShareModal}
+          isModalShowing={this.state.isShowingShareModal}
+          isModalSelected={this.state.isShareModalSelected}
         />
-        <PageContainer>
-          <ListingDisplay />
-        </PageContainer>
+        <div
+          onClick={() => this.state.isSearchSelected ? this.toggleSearchGrow() : undefined}
+          onClick={() => this.state.isShowingShareModal ? this.toggleShareModal() : undefined}
+        >
+          <GlobalStyle />
+          <Banner
+            isSearching={this.state.isSearchSelected}
+            toggleSearchGrow={this.toggleSearchGrow}
+          />
+          <ListingContainer>
+            <ListingDisplay toggleShareModal={this.toggleShareModal} />
+          </ListingContainer>
+        </div>
       </div>
     );
   }
