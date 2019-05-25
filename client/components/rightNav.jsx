@@ -23,6 +23,7 @@ const ListItem = styled.li`
     border-bottom: 2px solid rgb(72,72,72);
   }
   cursor: pointer;
+  color: #484848;
 `;
 
 const RightNav = (props) => {

@@ -1,8 +1,10 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import Axios from 'axios';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';
+import Details from './Details.jsx';
 import BookingFixed from './bookingFixed.jsx';
 
 const GlobalStyle = createGlobalStyle`
@@ -12,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
   background: white;
   line-height: 1.43;
   color: #484848;
+`;
+
+const Body = styled.div`
+  margin-bottom: 100px;
 `;
 
 const PageContainer = styled.div`
@@ -33,6 +39,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      listing: {},
       isSearchSelected: false,
       isShowingShareModal: false,
       isShareModalSelected: false
@@ -62,10 +69,19 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    Axios('http://localhost:3000/listings/1')
+      .then(res => res.data)
+      .then(data => {
+        this.setState({
+          listing: data
+        });
+      });
+  }
 
   render() {
     return (
-      <div>
+      <Body>
         <ShareModal
           toggleShareModal={this.toggleShareModal}
           selectModal={this.selectShareModal}
@@ -82,11 +98,12 @@ class App extends React.Component {
             toggleSearchGrow={this.toggleSearchGrow}
           />
           <ListingContainer>
-            <ListingDisplay toggleShareModal={this.toggleShareModal} />
+            <ListingDisplay listingData={this.state.listing} toggleShareModal={this.toggleShareModal} />
           </ListingContainer>
         </div>
-        <BookingFixed />
-      </div>
+        <Details listingData={this.state.listing} />
+        <BookingFixed listingData={this.state.listing} />
+      </Body>
     );
   }
 }

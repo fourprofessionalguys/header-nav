@@ -7,7 +7,8 @@ const FixedBottom = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 104px;
+  height: 81px;
+  background: white;
   border-top: 1px solid #F2F2F2;
   box-shadow: -0.5rem 0 0.5rem rgba(117,117,117,0.1);
 `;
@@ -43,8 +44,9 @@ const NameRatingBox = styled.div`
 `;
 
 const NameBox = styled.div`
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .1rem;
+  font-weight: 500;
   color: #767676;
 
 `;
@@ -83,7 +85,7 @@ const BookButton = styled.button`
   min-width: 174px;
 `;
 
-const BookingFixed = (props) => {
+const BookingFixed = ({ listingData }) => {
 
   return (
     <FixedBottom>
@@ -94,19 +96,18 @@ const BookingFixed = (props) => {
           </TitleSvg>
           <NameRatingBox>
             <NameBox>
-              Entire Townhouse
+              Entire {listingData.type}
             </NameBox>
             <RatingBox>
               <Stars>
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i>
               </Stars>
-              8
             </RatingBox>
           </NameRatingBox>
         </FlexBox>
         <FlexBox>
           <PriceContainer>
-            <Price>$261</Price> / night
+            <Price>${listingData.cost}</Price> / night
           </PriceContainer>
           <BookButton>Request to Book</BookButton>
         </FlexBox>
