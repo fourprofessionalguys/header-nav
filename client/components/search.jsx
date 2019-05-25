@@ -39,12 +39,17 @@ const ShrinkInput = keyframes`
 
 const Main = styled.div`
   min-width: 460px;
-  animation: ${props => props.isSearching ? GrowDiv : ShrinkDiv} 1s ease-out;
+  animation: ${props => props.isSearching ? GrowDiv : ShrinkDiv} 0.25s ease-out;
   animation-fill-mode:forwards;
   height: 3rem;
   display: flex;
   align-items: center;
-  box-shadow: 0 0.5rem 1rem rgba(118,118,118,0.4);
+  box-shadow: 0 0.1rem 0.3rem rgba(118,118,118,0.3);
+  &:hover {
+    box-shadow: 0 0.2rem 0.3rem rgba(118,118,118,0.3);
+  }
+  border-radius: 2px;
+  border: 1px solid rgba(118,118,118,0.1);
 `;
 
 const SearchIcon = styled.div`
@@ -65,13 +70,17 @@ const Input = styled.input`
   font-weight: 700;
   display; inline-block;
   width: 360px;
-  animation: ${props => props.isSearching ? GrowInput : ShrinkInput} 1s ease-out;
-  animation-fill-mode:forwards;
+  animation: ${props => props.isSearching ? GrowInput : ShrinkInput} 0.25s ease-out;
+  animation-fill-mode: forwards;
   border: none;
   border-image-outset: 0px;
   border-image-repeat: stretch;
   border-image-source: none;
   border-style: none;
+  height: 2.5rem;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Search = ({ toggleSearchGrow, isSearching }) => {
