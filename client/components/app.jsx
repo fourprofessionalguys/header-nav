@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';
+import BookingFixed from './bookingFixed.jsx';
 
 const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
@@ -84,6 +85,7 @@ class App extends React.Component {
             <ListingDisplay toggleShareModal={this.toggleShareModal} />
           </ListingContainer>
         </div>
+        <BookingFixed />
       </div>
     );
   }
