@@ -17,7 +17,13 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://cj:student@localhost/airbnb_clone_listings'
+    connection: 'postgres://cj:student@localhost/airbnb_clone_listings',
+    migrations: {
+      directory: __dirname + '/server/db/migrations'
+    },
+    seeds: {
+      directory: __dirname + '/server/db/seeds/dev'
+    }
   },
 
   staging: {
