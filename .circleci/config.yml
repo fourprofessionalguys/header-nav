@@ -24,4 +24,3 @@ jobs:
             - node_modules
           key: dependency-cache-{{ checksum "package.json" }}
       - run: npm run seed
-      - run: npm test
