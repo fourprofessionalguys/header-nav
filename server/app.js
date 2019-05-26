@@ -18,9 +18,7 @@ app.get('/listings/:listingId', (req, res) => {
   let listing_id = req.params.listingId;
   if ((/(^[1-9]{1}[0-9]?$)|^100$/).test(listing_id)) {
     database('listings').select('*').where({ 'id': listing_id }).then(listingData => {
-      console.log('listingData', listingData, typeof listingData);
       database('hosts').select('*').where({ 'id': listingData[0].host_id }).then(hostData => {
-        console.log('\n\nhostData', hostData, typeof hostData);
         const responseData = listingData.map(item => {
           return {
             title: item.title,

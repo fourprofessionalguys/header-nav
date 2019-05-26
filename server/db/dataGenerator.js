@@ -3,7 +3,52 @@ const axios = require('axios');
 const _ = require('underscore');
 const fs = require('fs');
 const path = require('path');
-const randomProfile = require('random-profile-generator');
+
+const USER_PHOTOS = Promise.all([
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_0bDm6kFC2Tc.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_CUJTifrLCLs.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_T4pyizC6G1k.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_V2sJMCDdslA.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_XU-OwxtV4Ko.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_Y6N_w94x8ik.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_ZxG76-UM6w0.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225__t_EMqrNzi0.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_aLT-JhaNqIU.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_g3OqMfRfo_8.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_j7Z-XUHHN40.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_m663zRzRe40.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_myggK4JQdLI.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_oYFv-_JKsVk.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_qDs5alqjJAk.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_ufWjkFmTNXo.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_xZjiUR7SWIQ.jpeg',
+  'https://s3.amazonaws.com/airbnbcloneuserphotos/225x225_yki80w96VZ0.jpeg'
+]);
+
+const LISTING_PHOTOS = Promise.all([
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_AQl-J19ocWE.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_AX-hGV70sd0.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_AhiUnolb7cg.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_C_dRtsnBOQA.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_F68K6buOR2s.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_FqqiAvJejto.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_GdCIsUD2-yA.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_GmEUEyISvd8.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_HmREZuu4XuY.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_I4ecJKp3eFw.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_L0BaowhFe4c.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_QGehbt2b6iQ.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_Rwb3barsoH8.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_TD2DKbVP284.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_UXFJ-6Zj27M.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_YFQGWKW33Ck.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_dJrIcUp4kcA.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_gREquCUXQLI.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_hAh4Unn50gk.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_kOYh8C_xLUQ.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_r5pPYI6lEpA.jpg',
+  'https://s3.amazonaws.com/airbnbcloneinteriorphotos/536x910_zfgVn46-xJw.jpg'
+]);
 
 const randomBoundedInt = function randomBoundedInt(bound) {
   return Math.floor(Math.random() * (bound)) + 1;
@@ -93,29 +138,6 @@ const fetchPhotos = function fetchPhotos(collectionId) {
     });
 }
 
-const buildUserPhotos = function buildUserPhotos() {
-  return new Promise((resolve, reject) => {
-    fs.readdir(path.join(__dirname, '../../', 'images', 'small'), { encoding: 'utf8' }, (error, data) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(Promise.all(data.map(img => `https://s3.amazonaws.com/airbnbcloneuserphotos/${img}`)))
-      }
-    });
-  });
-};
-
-const buildListingPhotos = function buildListingPhotos() {
-  return new Promise((resolve, reject) => {
-    fs.readdir(path.join(__dirname, '../../', 'images', 'interiorsFixed'), { encoding: 'utf8' }, (error, data) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(Promise.all(data.map(img => `https://s3.amazonaws.com/airbnbcloneinteriorphotos/${img}`)))
-      }
-    });
-  });
-};
 
 
 const generateOneListing = function generateOneListing(url) {
@@ -149,9 +171,9 @@ const generateOneHost = function generateOneHost(url) {
 };
 
 const buildNListings = function buildNListings(n) {
-  return buildUserPhotos()
+  return USER_PHOTOS
     .then(userPhotos => {
-      return buildListingPhotos()
+      return LISTING_PHOTOS
         .then(listingPhotos => {
           return Promise.all(_.map(_.range(n), (k) => {
             let host = generateOneHost(userPhotos[k % userPhotos.length]);
