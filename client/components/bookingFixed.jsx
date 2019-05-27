@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Stars from './Stars.jsx';
+import Stars from './stars.jsx';
 
 const FixedBottom = styled.div`
   display: relative;
