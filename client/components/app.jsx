@@ -20,14 +20,6 @@ const Body = styled.div`
   margin-bottom: 100px;
 `;
 
-const PageContainer = styled.div`
-  display: ${props => props.isModalShowing ? "block" : "none"};
-  opacity: ${props => props.isModalShowing ? "0.5" : "0.0"};
-  background: transparent;
-  width: 100%;
-  height: 100vh;
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -83,18 +75,15 @@ class App extends React.Component {
           isModalShowing={this.state.isShowingShareModal}
           isModalSelected={this.state.isShareModalSelected}
         />
-        <div
-        >
-          <GlobalStyle />
-          <Banner
-          />
-          <ListingDisplay
-            listingData={this.state.listing}
-            toggleShareModal={this.toggleShareModal}
-          />
-          <Details listingData={this.state.listing} />
-          <BookingFixed listingData={this.state.listing} />
-        </div>
+        <GlobalStyle />
+        <Banner
+        />
+        <ListingDisplay
+          listingData={this.state.listing}
+          toggleShareModal={this.toggleShareModal}
+        />
+        <Details listingData={this.state.listing} />
+        <BookingFixed listingData={this.state.listing} />
       </Body>
     );
   }
