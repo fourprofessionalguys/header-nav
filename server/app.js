@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.get('/listings/:listingId', (req, res) => {
   let listing_id = req.params.listingId;
-  if ((/(^[1-9]{1}[0-9]?$)|^100$/).test(listing_id)) {
+  if ((/(^[1-9]{1}[0-9]{0,1}$)|^100$/).test(listing_id)) {
     database('listings').select('*').where({ 'id': listing_id }).then(listingData => {
       database('hosts').select('*').where({ 'id': listingData[0].host_id }).then(hostData => {
         const responseData = listingData.map(item => {
@@ -36,10 +36,11 @@ app.get('/listings/:listingId', (req, res) => {
             hostPhoto: hostData[0].hostUrl,
           }
         })
-        res.status(200).json(responseData[0]);
-      })
-
+        res.status(201).json(responseData[0]);
+      });
     });
+  } else {
+    res.status(400).end();
   }
 });
 

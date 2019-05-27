@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import BookingFixed from './bookingFixed.jsx';
-import Stars from './Stars.jsx';
+import Stars from './stars.jsx';
 
 describe('Booking Fixed Banner', () => {
 
