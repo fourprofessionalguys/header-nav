@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: left;
+`;
+
 const SvgOuter = styled.div`
   font-weight: 700;
   display: table-cell;
@@ -27,10 +33,26 @@ const StyledSvg = styled.svg`
   font-weight: inherit;
 `;
 
-const Logo = (props) => {
+const ModalSvg = styled.svg`
+  display: block;
+  height: 1em;
+  width: 1em;
+  fill: #484848;
+  `;
+
+const NavModalButton = styled.div`
+  @media screen and (max-width: 1024px) {
+    display: block;
+    margin: 0 1.25rem 0 -1rem;
+    font-size: 9px;
+  }
+  display: none;
+`;
+
+const Logo = ({ }) => {
 
   return (
-    <div>
+    <Flex>
       <SvgOuter>
         <SvgBox>
           <StyledSvg viewBox="0 0 1000 1000">
@@ -38,7 +60,12 @@ const Logo = (props) => {
           </StyledSvg>
         </SvgBox>
       </SvgOuter>
-    </div>
+      <NavModalButton>
+        <ModalSvg viewBox="0 0 18 18">
+          <path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"></path>
+        </ModalSvg>
+      </NavModalButton>
+    </Flex>
   );
 };
 

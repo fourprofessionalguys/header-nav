@@ -38,7 +38,13 @@ const ShrinkInput = keyframes`
 `;
 
 const Main = styled.div`
-  min-width: 460px;
+  @media screen and (min-width: 1024px) {
+    min-width: 460px;
+  }
+  @media screen and (max-width: 1024px) {
+    min-width: 70%;
+    max-width: 70%;
+  }
   animation-fill-mode:forwards;
   height: 3rem;
   display: flex;
@@ -68,7 +74,14 @@ const StyledSvg = styled.svg`
 const Input = styled.input`
   font-weight: 700;
   display; inline-block;
-  width: 360px;
+
+  @media screen and (min-width: 830px) {
+    width: 360px;
+  }
+  @media screen and (max-width: 830px) {
+    min-width: 80%;
+    max-width: 80%;
+  }
   animation-fill-mode: forwards;
   border: none;
   border-image-outset: 0px;
