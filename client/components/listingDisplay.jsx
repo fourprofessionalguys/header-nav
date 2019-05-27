@@ -23,7 +23,6 @@ const TitleColumn = styled.div`
   max-height: 272px;
   min-width: 95%;
   order: 2;
-  padding: 0 40px 0 40px;
   background: white;
 
   @media screen and (min-width: 830px) {
