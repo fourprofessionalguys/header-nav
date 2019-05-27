@@ -39,7 +39,6 @@ const ShrinkInput = keyframes`
 
 const Main = styled.div`
   min-width: 460px;
-  animation: ${props => props.isSearching ? GrowDiv : ''} 0.25s ease-out;
   animation-fill-mode:forwards;
   height: 3rem;
   display: flex;
@@ -70,7 +69,6 @@ const Input = styled.input`
   font-weight: 700;
   display; inline-block;
   width: 360px;
-  animation: ${props => props.isSearching ? GrowInput : ''} 0.25s ease-out;
   animation-fill-mode: forwards;
   border: none;
   border-image-outset: 0px;

@@ -28,14 +28,6 @@ const PageContainer = styled.div`
   height: 100vh;
 `;
 
-const ListingContainer = styled.div`
-  
-
-  min-width: 100%;
-  max-height: 100vh;
-  margin: 0.1rem 1rem 0 1.5rem;
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -96,12 +88,10 @@ class App extends React.Component {
           <GlobalStyle />
           <Banner
           />
-          <ListingContainer>
-            <ListingDisplay
-              listingData={this.state.listing}
-              toggleShareModal={this.toggleShareModal}
-            />
-          </ListingContainer>
+          <ListingDisplay
+            listingData={this.state.listing}
+            toggleShareModal={this.toggleShareModal}
+          />
           <Details listingData={this.state.listing} />
           <BookingFixed listingData={this.state.listing} />
         </div>

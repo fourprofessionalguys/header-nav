@@ -35,7 +35,6 @@ const TitleSvg = styled.svg`
 `;
 
 const NameRatingBox = styled.div`
-  min-width: 600px;
   height: 100%;
   margin: 0 0 0 2rem;
   display: flex;

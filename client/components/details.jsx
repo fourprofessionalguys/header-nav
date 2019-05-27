@@ -2,12 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Main = styled.div`
-  width: 1281px;
-  height: 288px;
+  width: 95%;
   margin: 3rem auto;
-  border: 0px solid black;
   display: flex;
-  justify-content: space-between
+  flex-wrap: wrap;
+  @media screen and (min-width: 1024px) {
+    height: 288px;
+  }
+`;
+
+const ListingDetails = styled.div`
+  @media screen and (min-width: 1024px) {
+    min-width: 58.333333%;
+  }
+  min-width: 100%;
 `;
 
 const DetailsList = styled.ul`
@@ -30,9 +38,18 @@ const DetailsBox = styled.div`
 `;
 
 const HostDetails = styled.div`
+  @media screen and (min-width: 1024px) {
+    width: 200px;
+  }
+  
   display: flex;
   flex-wrap: wrap;
-  width: 700px;
+  @media screen and (max-width: 1024px) {
+    align-items: left;
+    margin: 5rem 5rem 5rem 0;
+    min-width: 100%;
+    order: 2;
+  }
 `;
 
 const Image = styled.img`
@@ -55,15 +72,32 @@ const HostedBy = styled.div`
   font-size: 16px;
   font-weight: 700;
   color: #484848;
-  margin-top: -5rem;
-  margin-left: 6.5rem;
+  @media screen and (min-width: 1024px) {
+    margin: 0.5rem 0 0 1rem;
+  }
+  @media screen and (max-width: 1024px) {
+    margin: 0.5rem 0 0 2rem;
+  }
+`;
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+`;
+
+const Divider = styled.hr`
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+  display: block;
 `;
 
 const Details = ({ listingData }) => {
 
   return (
     <Main>
-      <nav className="col-7">
+      <ListingDetails>
         <DetailsList>
           <ListItem id="guestsCount">{listingData.guests} guests</ListItem>
           <ListItem id="bedroomCount">{listingData.bedrooms} bedrooms</ListItem>
@@ -73,16 +107,20 @@ const Details = ({ listingData }) => {
         <DetailsBox id="listingDescription">
           {listingData.description}
         </DetailsBox>
-      </nav>
+        <Divider></Divider>
+      </ListingDetails>
       <HostDetails className="col-5">
         <Image id="hostPhoto" src={listingData.hostPhoto} alt="" />
-        <HostDescription id="hostDescription">
-          "{listingData.hostDescription}"
-        </HostDescription>
-        <HostedBy id="hostedBy">
-          Hosted by {listingData.hostName}
-        </HostedBy>
+        <Flex>
+          <HostDescription id="hostDescription">
+            "{listingData.hostDescription}"
+          </HostDescription>
+          <HostedBy id="hostedBy">
+            Hosted by {listingData.hostName}
+          </HostedBy>
+        </Flex>
       </HostDetails>
+      <Divider></Divider>
     </Main>
   );
 };

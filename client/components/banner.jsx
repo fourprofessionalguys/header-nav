@@ -23,10 +23,14 @@ const SearchContainer = styled.div`
 `;
 
 const DisplayRightNav = styled.div`
-  @media only screen and (min-width: 1025px) {
+  @media screen and (min-width: 1024px) {
     display: block;
   }
-  display: none;
+  
+  @media screen and (max-width: 1024px) {
+    display: none;
+    width: 0px;
+  }
 `;
 
 const Banner = ({ }) => {

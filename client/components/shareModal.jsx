@@ -25,7 +25,7 @@ const ModalInner = styled.div`
   width: 376px;
   min-height: 681px;
   padding: 10px 24px 0px 24px;
-  margin: 4rem 0 0 32rem;
+  margin: 4rem 0 0 30%;
   overflow: auto;
   box-shadow: 0 0.01rem 0.8rem rgba(118,118,118,0.3);
 `;
