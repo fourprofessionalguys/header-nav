@@ -92,13 +92,15 @@ class App extends React.Component {
           isModalSelected={this.state.isShareModalSelected}
         />
         <div
-          onClick={() => this.state.isShowingShareModal ? this.toggleShareModal() : undefined}
         >
           <GlobalStyle />
           <Banner
           />
           <ListingContainer>
-            <ListingDisplay listingData={this.state.listing} toggleShareModal={this.toggleShareModal} />
+            <ListingDisplay
+              listingData={this.state.listing}
+              toggleShareModal={this.toggleShareModal}
+            />
           </ListingContainer>
           <Details listingData={this.state.listing} />
           <BookingFixed listingData={this.state.listing} />
