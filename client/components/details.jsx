@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Main = styled.div`
-  width: 95%;
+  max-width: 95%;
   margin: 3rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +13,8 @@ const Main = styled.div`
 
 const ListingDetails = styled.div`
   @media screen and (min-width: 1024px) {
-    min-width: 58.333333%;
+    min-width: 53%;
+    max-width: 53%;
   }
   min-width: 100%;
 `;
@@ -21,6 +22,7 @@ const ListingDetails = styled.div`
 const DetailsList = styled.ul`
   display: flex;
   align-items: center;
+  max-width: 500px;
 `;
 
 const ListItem = styled.li`
@@ -34,7 +36,7 @@ const ListItem = styled.li`
 const DetailsBox = styled.div`
   padding: 1rem;
   font-weight: 300;
-  max-width: 500px;
+  max-width: 400px;
 `;
 
 const HostDetails = styled.div`
@@ -43,7 +45,6 @@ const HostDetails = styled.div`
   }
   
   display: flex;
-  flex-wrap: wrap;
   @media screen and (max-width: 1024px) {
     align-items: left;
     margin: 5rem 5rem 5rem 0;
@@ -53,6 +54,7 @@ const HostDetails = styled.div`
 `;
 
 const Image = styled.img`
+  float: left;
   height: 88px;
   width: 88px;
   display: block;
