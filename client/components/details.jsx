@@ -65,21 +65,21 @@ const Details = ({ listingData }) => {
     <Main>
       <nav className="col-7">
         <DetailsList>
-          <ListItem>{listingData.guests} guests</ListItem>
-          <ListItem>{listingData.bedrooms} bedrooms</ListItem>
-          <ListItem>{listingData.beds} beds</ListItem>
-          <ListItem>{listingData.baths} baths</ListItem>
+          <ListItem id="guestsCount">{listingData.guests} guests</ListItem>
+          <ListItem id="bedroomCount">{listingData.bedrooms} bedrooms</ListItem>
+          <ListItem id="bedsCount">{listingData.beds} beds</ListItem>
+          <ListItem id="bathsCount">{listingData.baths} bathrooms</ListItem>
         </DetailsList>
-        <DetailsBox>
+        <DetailsBox id="listingDescription">
           {listingData.description}
         </DetailsBox>
       </nav>
       <HostDetails className="col-5">
-        <Image src={listingData.hostPhoto} alt="" />
-        <HostDescription>
+        <Image id="hostPhoto" src={listingData.hostPhoto} alt="" />
+        <HostDescription id="hostDescription">
           "{listingData.hostDescription}"
         </HostDescription>
-        <HostedBy>
+        <HostedBy id="hostedBy">
           Hosted by {listingData.hostName}
         </HostedBy>
       </HostDetails>
