@@ -4,10 +4,15 @@
   "description": "Proxy server for airbnb clone project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon server/server.js",
     "react-dev": "webpack -d --watch",
     "seed": "knex migrate:rollback; knex migrate:latest; knex seed:run;"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/client/setupTests.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -35,7 +40,12 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
     "faker": "^4.1.0",
+    "jest": "^24.8.0",
+    "jest-dom": "^3.4.0",
+    "jest-enzyme": "^7.0.2",
     "sharp": "^0.22.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"

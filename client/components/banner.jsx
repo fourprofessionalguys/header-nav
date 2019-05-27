@@ -15,22 +15,32 @@ const Main = styled.div`
 const SearchContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 997;
+  @media screen and (min-width: 769px) {
+    width: 60%;
+  }
+  width: 100%;
   height: 81px;
 `;
 
-const Banner = ({ toggleSearchGrow, isSearching }) => {
+const DisplayRightNav = styled.div`
+  @media only screen and (min-width: 1025px) {
+    display: block;
+  }
+  display: none;
+`;
+
+const Banner = ({ }) => {
 
   return (
     <Main>
       <SearchContainer>
-      <Logo />
+        <Logo />
         <Search
-          isSearching={isSearching}
-          toggleSearchGrow={toggleSearchGrow}
         />
       </SearchContainer>
-      <RightNav />
+      <DisplayRightNav>
+        <RightNav />
+      </DisplayRightNav>
     </Main>
   );
 };

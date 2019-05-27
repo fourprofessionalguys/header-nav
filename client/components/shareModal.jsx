@@ -79,7 +79,7 @@ const ShareModal = ({ isModalSelected, isModalShowing, selectModal, toggleShareM
               </SvgBox>
             </CloseButton>
           </ModalHeader>
-          <ShareModalBody />
+          <ShareModalBody id="shareModalBody" />
         </ModalInner>
       </ModalContainer>
     </ModalFixed>

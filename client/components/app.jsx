@@ -29,7 +29,9 @@ const PageContainer = styled.div`
 `;
 
 const ListingContainer = styled.div`
-  width: 1410px;
+  
+
+  min-width: 100%;
   max-height: 100vh;
   margin: 0.1rem 1rem 0 1.5rem;
 `;
@@ -83,26 +85,24 @@ class App extends React.Component {
     return (
       <Body>
         <ShareModal
+          id="shareModal"
           toggleShareModal={this.toggleShareModal}
           selectModal={this.selectShareModal}
           isModalShowing={this.state.isShowingShareModal}
           isModalSelected={this.state.isShareModalSelected}
         />
         <div
-          onClick={() => this.state.isSearchSelected ? this.toggleSearchGrow() : undefined}
           onClick={() => this.state.isShowingShareModal ? this.toggleShareModal() : undefined}
         >
           <GlobalStyle />
           <Banner
-            isSearching={this.state.isSearchSelected}
-            toggleSearchGrow={this.toggleSearchGrow}
           />
           <ListingContainer>
             <ListingDisplay listingData={this.state.listing} toggleShareModal={this.toggleShareModal} />
           </ListingContainer>
+          <Details listingData={this.state.listing} />
+          <BookingFixed listingData={this.state.listing} />
         </div>
-        <Details listingData={this.state.listing} />
-        <BookingFixed listingData={this.state.listing} />
       </Body>
     );
   }
