@@ -4,7 +4,7 @@ import Axios from 'axios';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';
-import Details from './Details.jsx';
+import Details from './details.jsx';
 import BookingFixed from './bookingFixed.jsx';
 
 const GlobalStyle = createGlobalStyle`
