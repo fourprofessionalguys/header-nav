@@ -24,6 +24,7 @@ const TitleColumn = styled.div`
   min-width: 95%;
   order: 2;
   background: white;
+  padding: 40px;
 
   @media screen and (min-width: 830px) {
     order: 1;
@@ -33,7 +34,6 @@ const TitleColumn = styled.div`
     max-height: 428px;
     margin: 0 0.6% 0 0.6%;
     background: #F2F2F2;
-    padding: 40px;
   }
 
   @media screen and (min-width: 1130px) {
@@ -91,17 +91,21 @@ const ListingImageBox = styled.div`
   height: 100%;
   background: url('${props => props.listingPhoto ? props.listingPhoto : 'https://s3.amazonaws.com/airbnbcloneinteriorphotos/FqqiAvJejto.jpg'}');
   background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
-  margin-left: 2.5%;
-  margin-bottom: 0;
+  margin: 0;
 
+  @media screen and (max-width: 830px) {
+    min-width: 100%:
+  }
+  
   @media screen and (min-width: 300px) {
     width: 100%;
     max-height: 100%;
   }
-
+  
   @media screen and (min-width: 1024px) {
+    margin-left: 2.5%;
     height: 428px;
     margin: 0;
   }

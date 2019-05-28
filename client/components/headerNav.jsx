@@ -20,7 +20,7 @@ const Body = styled.div`
   margin-bottom: 100px;
 `;
 
-class App extends React.Component {
+class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
 
@@ -89,4 +89,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default HeaderNav;
