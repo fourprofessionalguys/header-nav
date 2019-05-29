@@ -65,7 +65,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Body>
+      <div>
         <ShareModal
           id="shareModal"
           toggleShareModal={this.toggleShareModal}
@@ -82,7 +82,7 @@ class App extends React.Component {
         />
         <Details listingData={this.state.listing} />
         <BookingFixed listingData={this.state.listing} />
-      </Body>
+      </div>
     );
   }
 }
