@@ -8,7 +8,7 @@ import ShareModalBody from './shareModalBody.jsx';
 describe('Modal', () => {
 
   it('modal renders on load', () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<HeaderNav />);
     expect(wrapper.find('#shareModal').length).toEqual(1);
   });
 
