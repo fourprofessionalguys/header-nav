@@ -18,10 +18,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Body = styled.div`
-  margin-bottom: 500px;
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
