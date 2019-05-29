@@ -121,8 +121,8 @@ const Details = ({ listingData }) => {
             Hosted by {listingData.hostName}
           </HostedBy>
         </Flex>
+        <Divider></Divider>
       </HostDetails>
-      <Divider></Divider>
     </Main>
   );
 };

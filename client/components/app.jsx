@@ -8,16 +8,18 @@ import Details from './details.jsx';
 import BookingFixed from './bookingFixed.jsx';
 
 const GlobalStyle = createGlobalStyle`
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  background: white;
-  line-height: 1.43;
-  color: #484848;
+  body {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background: white;
+    line-height: 1.43;
+    color: #484848;
+  }
 `;
 
 const Body = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 500px;
 `;
 
 class App extends React.Component {
@@ -56,7 +58,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Axios('http://localhost:3000/listings/1')
+    Axios('http://localhost:3001/listings/1')
       .then(res => res.data)
       .then(data => {
         this.setState({
