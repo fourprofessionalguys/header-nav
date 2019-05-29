@@ -4,10 +4,8 @@ const express = require('express');
 // get app
 const app = express();
 
-
 // Database
 const database = require('./db/dbConfig.js');
-
 
 // Middleware
 app.use(express.static('public'));

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import App from './app.jsx';
+import HeaderNav from './headerNav.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 
 describe('Listing Display', () => {

@@ -56,7 +56,7 @@ class HeaderNav extends React.Component {
   }
 
   componentDidMount() {
-    Axios('http://localhost:3000/listings/1')
+    Axios('http://localhost:3001/listings/1')
       .then(res => res.data)
       .then(data => {
         this.setState({
