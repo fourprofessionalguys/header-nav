@@ -8,16 +8,14 @@ import Details from './details.jsx';
 import BookingFixed from './bookingFixed.jsx';
 
 const GlobalStyle = createGlobalStyle`
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  background: white;
-  line-height: 1.43;
-  color: #484848;
-`;
-
-const Body = styled.div`
-  margin-bottom: 100px;
+  body {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background: white;
+    line-height: 1.43;
+    color: #484848;
+  }
 `;
 
 class HeaderNav extends React.Component {
@@ -67,7 +65,8 @@ class HeaderNav extends React.Component {
 
   render() {
     return (
-      <Body>
+      <div>
+        <GlobalStyle />
         <ShareModal
           id="shareModal"
           toggleShareModal={this.toggleShareModal}
@@ -75,16 +74,19 @@ class HeaderNav extends React.Component {
           isModalShowing={this.state.isShowingShareModal}
           isModalSelected={this.state.isShareModalSelected}
         />
-        <GlobalStyle />
         <Banner
         />
         <ListingDisplay
           listingData={this.state.listing}
           toggleShareModal={this.toggleShareModal}
         />
-        <Details listingData={this.state.listing} />
-        <BookingFixed listingData={this.state.listing} />
-      </Body>
+        <Details
+          listingData={this.state.listing}
+        />
+        <BookingFixed
+          listingData={this.state.listing}
+        />
+      </div>
     );
   }
 }
