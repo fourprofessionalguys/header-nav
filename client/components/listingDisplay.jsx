@@ -1,24 +1,13 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  &&& {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    background: white;
-    line-height: 1.43;
-    color: #484848;
-  }
-`;
-
 const Main = styled.div`
   &&& { 
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     @media screen and (min-width: 831px) {
-      margin-left: 2rem;
+      margin-left: 1rem;
     }
   }
 `;
@@ -49,18 +38,23 @@ const TitleColumn = styled.div`
 
 const ImageColumn = styled.div`
   &&& { 
-    min-width: 97.5%;
-    height: 650px;
+    width: 100%;
+    height: 320px;
     margin: 0 0.6% 0 0.6%;
     position: relative;
-    
-    @media screen and (min-width: 300px) {
-      max-height: 428px;
+    max-width: 100%;
+
+    @media screen and (min-width: 450px) {
+      height: 428px;
     }
-    
+
+    @media screen and (min-width: 790px) {
+      height: 428px;
+    }
+
     @media screen and (min-width: 830px) {
       order: 2;
-      height: 428px;
+      height: 456px;
       min-width: 64.111111%;
       max-width: 64.111111%;
     }
@@ -110,17 +104,19 @@ const ListingTitle = styled.span`
 
 const ListingImageBox = styled.div`
   &&& { 
-    height: 100%;
     background: url('${props => props.listingPhoto}');
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
-    margin-left: 2.5%;
-    margin-bottom: 0;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
 
-    @media screen and (min-width: 300px) {
-      width: 100%;
-      max-height: 100%;
+    @media screen and (min-width: 790px) {
+      height: 428px;
+    }
+
+    @media screen and (min-width: 830px) {
+      height: 456px;
     }
 
     @media screen and (min-width: 1024px) {
@@ -134,8 +130,43 @@ const ListingImageBox = styled.div`
   }
 `;
 
+const ListingImage = styled.img`
+  margin-bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media screen and (min-width: 500px) {
+      max-height: 100%;
+      max-width: 100%;
+  }
+  @media screen and (min-width: 760px) {
+      height: 456px;
+      margin-left: 3%;
+    }
+
+  @media screen and (min-width: 830px) {
+    height: 100%;
+    height: 428px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 428px;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 1130px) {
+    height: 536px;
+  }
+`;
+
 const ButtonsContainer = styled.div`
   &&& { 
+    z-index: 200;
     position: absolute;
     top 24px;
     right: 24px;
@@ -192,10 +223,10 @@ const ListingDisplay = ({ listingData, toggleShareModal }) => {
         </ListingTitleBox>
       </TitleColumn>
       <ImageColumn>
+        <ListingImage src={listingData.listingPhoto} />
         <ListingImageBox
           id="listingPhotoBox"
           listingPhoto={listingData.listingPhoto}
-          src={listingData.listingPhoto}
           className=""
         >
           <ButtonsContainer>

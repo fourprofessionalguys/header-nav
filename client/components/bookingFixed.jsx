@@ -41,19 +41,6 @@ const FlexBoxLeft = styled.div`
   margin: 0 2rem 0 2rem;
 `;
 
-const FlexBoxLeft = styled.div`
-  display: none;
-
-  @media screen and (min-width: 744px) {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin: 0 2rem 0 2rem;
-    justify-content: ${props => props.spaceBetween ? "space-between" : ''}
-    justify-content: ${props => props.center ? "space-between" : ''}
-  }
-`;
-
 const TitleSvg = styled.svg`
   height: 44px;
   font-size: 14px;
@@ -74,7 +61,6 @@ const NameBox = styled.div`
   letter-spacing: .1rem;
   font-weight: 500;
   color: #767676;
-
 `;
 
 const RatingBox = styled.div`

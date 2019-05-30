@@ -1,22 +1,11 @@
 import React from 'react';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import Axios from 'axios';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';
 import Details from './details.jsx';
 import BookingFixed from './bookingFixed.jsx';
-
-const GlobalStyle = createGlobalStyle`
-  &&& {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    background: white;
-    line-height: 1.43;
-    color: #484848;
-  }
-`;
 
 const theme = {
   main: 'orange',
@@ -64,7 +53,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Axios(`http://localhost:3001/listings/${Math.floor(Math.random() * 100)}`)
+    Axios(`http://localhost:3001/listings/${Math.floor(Math.random() * 99) + 1}`)
       .then(res => res.data)
       .then(data => {
         this.setState({
@@ -76,7 +65,7 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Body>
+        <div>
           <ShareModal
             id="shareModal"
             toggleShareModal={this.toggleShareModal}
@@ -92,7 +81,7 @@ class App extends React.Component {
           />
           <Details listingData={this.state.listing} />
           <BookingFixed listingData={this.state.listing} />
-        </Body>
+        </div>
       </ThemeProvider>
     );
   }
