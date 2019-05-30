@@ -2,59 +2,75 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  background: white;
-  line-height: 1.43;
-  color: #484848;
+  &&& { 
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background: white;
+    line-height: 1.43;
+    color: #484848;
+  }
 `;
 
 const ModalBody = styled.div`
-  width: 504;
-  padding-bottom: 3rem;
-  margin: auto;
+  &&& { 
+    width: 504;
+    padding-bottom: 3rem;
+    margin: auto;
+  }
 `;
 
 const Title = styled.div`
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.25rem;
-  padding: 2px 0 2px 0;
-  color: #484848;
+  &&& { 
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25rem;
+    padding: 2px 0 2px 0;
+    color: #484848;
+  }
   `;
 
 const SubTitle = styled.div`
-  font-size: 14px;
-  font-weight: 300;
-  color: #484848;
-  line-height: 1.2857142857142858em;
-  margin-top: 0.5rem;
+  &&& { 
+    font-size: 14px;
+    font-weight: 300;
+    color: #484848;
+    line-height: 1.2857142857142858em;
+    margin-top: 0.5rem;
+  }
 `;
 
 const Section = styled.section`
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.43;
-  color: #484848;
+  &&& { 
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.43;
+    color: #484848;
+  }
 `;
 
 const Box = styled.div`
-  padding: 10px 0 10px 0;
-  display: flex;
-  align-items: center;
+  &&& { 
+    padding: 10px 0 10px 0;
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const SvgBox = styled.svg`
-  height: 18px;
-  width: 18px;
-  display: block;
-  fill: rgb(72, 72, 72);
-  margin-right: 8px;
+  &&& { 
+    height: 18px;
+    width: 18px;
+    display: block;
+    fill: rgb(72, 72, 72);
+    margin-right: 8px;
+  }
 `;
 
 const LinkName = styled.div`
-  color: rgb(145, 70, 105);
+  &&& { 
+    color: rgb(145, 70, 105);
+  }
 `;
 
 const ShareModalBody = (props) => {
