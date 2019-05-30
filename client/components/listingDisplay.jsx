@@ -1,143 +1,183 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  &&& {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background: white;
+    line-height: 1.43;
+    color: #484848;
+  }
+`;
 
 const Main = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  @media screen and (min-width: 831px) {
-    margin-left: 2rem;
+  &&& { 
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    @media screen and (min-width: 831px) {
+      margin-left: 2rem;
+    }
   }
 `;
 
 const TitleColumn = styled.div`
-  max-height: 272px;
-  min-width: 95%;
-  order: 2;
-  background: white;
-  padding: 40px;
-
-  @media screen and (min-width: 830px) {
-    order: 1;
-    min-width: 30.888888%;
-    max-width: 30.888888%;
-    min-height: 428px;
-    max-height: 428px;
-    margin: 0 0.6% 0 0.6%;
-    background: #F2F2F2;
-  }
-
-  @media screen and (min-width: 1130px) {
-    min-height: 536px;
+  &&& { 
+    max-height: 272px;
+    min-width: 95%;
+    order: 2;
+    background: white;
+    padding: 40px;
+    
+    @media screen and (min-width: 830px) {
+      order: 1;
+      min-width: 30.888888%;
+      max-width: 30.888888%;
+      min-height: 428px;
+      max-height: 428px;
+      margin: 0 0.6% 0 0.6%;
+      background: #F2F2F2;
+    }
+    
+    @media screen and (min-width: 1130px) {
+      min-height: 536px;
+    }
   }
   `;
 
 const ImageColumn = styled.div`
-  min-width: 97.5%;
-  height: 650px;
-  margin: 0 0.6% 0 0.6%;
-  position: relative;
-
-  @media screen and (min-width: 300px) {
-    max-height: 428px;
-  }
-
-  @media screen and (min-width: 830px) {
-    order: 2;
-    height: 428px;
-    min-width: 64.111111%;
-    max-width: 64.111111%;
-  }
-
-  @media screen and (min-width: 1130px) {
-    height: 536px;
-    max-height: 536px;
+  &&& { 
+    min-width: 97.5%;
+    height: 650px;
+    margin: 0 0.6% 0 0.6%;
+    position: relative;
+    
+    @media screen and (min-width: 300px) {
+      max-height: 428px;
+    }
+    
+    @media screen and (min-width: 830px) {
+      order: 2;
+      height: 428px;
+      min-width: 64.111111%;
+      max-width: 64.111111%;
+    }
+    
+    @media screen and (min-width: 1130px) {
+      height: 536px;
+      max-height: 536px;
+    }
   }
 `;
 
 const TitleSvg = styled.svg`
-  height: 44px;
-  font-size: 14px;
-  fill: rgb(145, 70, 105);
+  &&& { 
+    height: 44px;
+    font-size: 14px;
+    fill: rgb(145, 70, 105);
+  }
 `;
 
 const ListingTitleBox = styled.div`
-  margin-top: 24px;
+  &&& { 
+    margin-top: 24px;
+  }
 `;
 
 const ListingTitle = styled.span`
-  @media screen and (min-width: 1024px) {
-    font-size: 42px;
+  &&& { 
+    font-size: 38px;
+    @media screen and (min-width: 830px) {
+      font-size: 32px;
+    }
+
+     @media screen and (min-width: 930px) {
+      font-size: 38px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 42px;
+    }
+
+    font-weight: 300;
+    line-height: 46px;
+    color: #484848;
+    text-overflow: ellipsis;
   }
-  @media screen and (max-width: 1024px) {
-    font-size: 34px;
-  }
-  font-weight: 300;
-  line-height: 46px;
-  color: #484848;
-  text-overflow: ellipsis;
 `;
 
 const ListingImageBox = styled.div`
-  height: 100%;
-  background: url('${props => props.listingPhoto ? props.listingPhoto : 'https://s3.amazonaws.com/airbnbcloneinteriorphotos/FqqiAvJejto.jpg'}');
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  margin-left: 2.5%;
-  margin-bottom: 0;
+  &&& { 
+    height: 100%;
+    background: url('${props => props.listingPhoto}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-left: 2.5%;
+    margin-bottom: 0;
 
-  @media screen and (min-width: 300px) {
-    width: 100%;
-    max-height: 100%;
-  }
+    @media screen and (min-width: 300px) {
+      width: 100%;
+      max-height: 100%;
+    }
 
-  @media screen and (min-width: 1024px) {
-    height: 428px;
-    margin: 0;
-  }
+    @media screen and (min-width: 1024px) {
+      height: 428px;
+      margin: 0;
+    }
 
-  @media screen and (min-width: 1130px) {
-    height: 536px;
+    @media screen and (min-width: 1130px) {
+      height: 536px;
+    }
   }
 `;
 
 const ButtonsContainer = styled.div`
-  position: absolute;
-  top 24px;
-  right: 24px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100px;
+  &&& { 
+    position: absolute;
+    top 24px;
+    right: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100px;
+  }
 `;
 
 const ShareButton = styled.button`
-  height: 40px;
-  width: 40px;
-  color: rgba(0, 0, 0, 0.847);
-  cursor: pointer;
-  margin: 0;
-  background: white;
-  display: inline-block;
-  text-align: center;
-  line-height: 1;
-  border: 4px solid white;
-  border-radius: 4px;
-  &:focus {
-    outline: none;
+  &&& { 
+    height: 40px;
+    width: 40px;
+    color: rgba(0, 0, 0, 0.847);
+    cursor: pointer;
+    margin: 0;
+    background: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    border: 4px solid white;
+    border-radius: 4px;
+    &:focus {
+      outline: none;
+    }
   }
 `;
 
 const ShareSpan = styled.span`
-  box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.14);
+  &&& { 
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.14);
+  }
 `;
 
 const ShareSvg = styled.svg`
-  height: 16px;
-  width: 16px;
-  display: block;
-  fill: currentColor;
+  &&& { 
+    height: 16px;
+    width: 16px;
+    display: block;
+    fill: currentColor;
+  }
 `;
 
 const ListingDisplay = ({ listingData, toggleShareModal }) => {
@@ -155,6 +195,7 @@ const ListingDisplay = ({ listingData, toggleShareModal }) => {
         <ListingImageBox
           id="listingPhotoBox"
           listingPhoto={listingData.listingPhoto}
+          src={listingData.listingPhoto}
           className=""
         >
           <ButtonsContainer>

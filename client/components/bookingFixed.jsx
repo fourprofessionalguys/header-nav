@@ -12,6 +12,7 @@ const FixedBottom = styled.div`
   background: white;
   border-top: 1px solid #F2F2F2;
   box-shadow: -0.5rem 0 0.5rem rgba(117,117,117,0.1);
+  z-index: 1000;
 `;
 
 const Main = styled.div`
@@ -19,10 +20,22 @@ const Main = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  width: 100%;
 `;
 
 const FlexBox = styled.div`
   display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 2rem 0 2rem;
+`;
+
+const FlexBoxLeft = styled.div`
+  display: none;
+  @media screen and (min-width: 744px) {
+    display: flex;
+  }
   align-items: center;
   height: 100%;
   margin: 0 2rem 0 2rem;
@@ -81,6 +94,38 @@ const Price = styled.span`
 `;
 
 const BookButton = styled.button`
+  @media screen and (min-width: 560px) {
+    margin-left: 55%;
+  }
+
+  @media screen and (min-width: 580px) {
+    margin-left: 60%;
+  }
+
+  @media screen and (min-width: 600px) {
+    margin-left: 65%;
+  }
+
+  @media screen and (min-width: 620px) {
+    margin-left: 70%;
+  }
+
+  @media screen and (min-width: 640px) {
+    margin-left: 75%;
+  }
+
+  @media screen and (min-width: 660px) {
+    margin-left: 80%;
+  }
+
+  @media screen and (min-width: 680px) {
+    margin-left: 85%;
+  }
+
+  @media screen and (min-width: 744px) {
+    margin-left: 0%;
+  }
+
   border-radius: 4px;
   background: #914669;
   font-size: 16px;

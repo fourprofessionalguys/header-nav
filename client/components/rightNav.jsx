@@ -6,24 +6,28 @@ const Main = styled.div`
 `;
 
 const NavList = styled.ul`
-  list-style: none;
-  display: flex;
-  align-items: center;
-  height: 81px;
-  margin-right: 1rem;
+  &&& { 
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 81px;
+    margin-right: 1rem;
+  }
 `;
 
 const ListItem = styled.li`
-  font-size: 14px;
-  padding: 3rem 1rem 3rem 1rem;
-  text-align: center;
-  height: 81px;
-  border-bottom: 2px solid white;
-  &:hover {
-    border-bottom: 2px solid rgb(72,72,72);
+  &&& { 
+    font-size: 14px;
+    padding: 3rem 1rem 3rem 1rem;
+    text-align: center;
+    height: 81px;
+    border-bottom: 2px solid white;
+    &:hover {
+      border-bottom: 2px solid rgb(72,72,72);
+    }
+    cursor: pointer;
+    color: #484848;
   }
-  cursor: pointer;
-  color: #484848;
 `;
 
 const RightNav = (props) => {

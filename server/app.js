@@ -1,6 +1,7 @@
 // imports
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // get app
 const app = express();
@@ -13,6 +14,7 @@ const database = require('./db/dbConfig.js');
 // Middleware
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/listings/:listingId', (req, res) => {
   let listing_id = req.params.listingId;
@@ -37,11 +39,10 @@ app.get('/listings/:listingId', (req, res) => {
           }
         })
         res.status(201).set({
-          'Access-Control-Allow-Credentials': 'true',
           'Access-Control-Allow-Origin': 'http://localhost:3000',
+          'Access-Control-Allow-Credentials': 'true',
           'Content-Type': 'application/json'
         }).json(responseData[0]);
-        
       });
     });
   } else {
