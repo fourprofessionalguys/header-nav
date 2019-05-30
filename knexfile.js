@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://flamingeagle9000:rosie123@localhost/airbnb_clone_listings',
+    connection: 'postgres://cj:student@localhost/airbnb_clone_listings',
     useNullAsDefault: true,
     charset: 'utf8',
     migrations: {
@@ -17,7 +17,7 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://flamingeagle9000:rosie123@localhost/airbnb_clone_listings',
+    connection: 'postgres://cj:student@localhost/airbnb_clone_listings',
     migrations: {
       directory: __dirname + '/server/db/migrations'
     },
@@ -30,8 +30,8 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'airbnb_clone_listings',
-      user: 'flamingeagle9000',
-      password: 'rosie123'
+      user: 'cj',
+      password: 'student'
     },
     pool: {
       min: 2,
@@ -46,8 +46,8 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'airbnb_clone_listings',
-      user: 'flamingeagle9000',
-      password: 'rosie123'
+      user: 'cj',
+      password: 'student'
     },
     pool: {
       min: 2,
