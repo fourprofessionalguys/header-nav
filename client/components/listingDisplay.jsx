@@ -150,13 +150,11 @@ const ListingImage = styled.img`
     }
 
   @media screen and (min-width: 830px) {
-    height: 100%;
     height: 428px;
+    margin: 0;
   }
 
   @media screen and (min-width: 1024px) {
-    height: 428px;
-    margin: 0;
   }
 
   @media screen and (min-width: 1130px) {
@@ -166,7 +164,7 @@ const ListingImage = styled.img`
 
 const ButtonsContainer = styled.div`
   &&& { 
-    z-index: 200;
+    z-index: 4;
     position: absolute;
     top 24px;
     right: 24px;

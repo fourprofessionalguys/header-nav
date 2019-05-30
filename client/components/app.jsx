@@ -1,11 +1,31 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import Axios from 'axios';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';
 import Details from './details.jsx';
 import BookingFixed from './bookingFixed.jsx';
+
+const BodyContainerHeaderNav = styled.div`
+  &&&& {
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    padding: 0;
+  }
+`;
+
+const ModalFixed = styled.div`
+  &&&& { 
+    display: fixed;
+  }
+`;
 
 const theme = {
   main: 'orange',
@@ -65,14 +85,16 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div>
-          <ShareModal
-            id="shareModal"
-            toggleShareModal={this.toggleShareModal}
-            selectModal={this.selectShareModal}
-            isModalShowing={this.state.isShowingShareModal}
-            isModalSelected={this.state.isShareModalSelected}
-          />
+        <BodyContainerHeaderNav>
+          <ModalFixed>
+            <ShareModal
+              id="shareModal"
+              toggleShareModal={this.toggleShareModal}
+              selectModal={this.selectShareModal}
+              isModalShowing={this.state.isShowingShareModal}
+              isModalSelected={this.state.isShareModalSelected}
+            />
+          </ModalFixed>
           <Banner
           />
           <ListingDisplay
@@ -81,7 +103,7 @@ class App extends React.Component {
           />
           <Details listingData={this.state.listing} />
           <BookingFixed listingData={this.state.listing} />
-        </div>
+        </BodyContainerHeaderNav>
       </ThemeProvider>
     );
   }
