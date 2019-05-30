@@ -1,41 +1,10 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
 import Axios from 'axios';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';
 import Details from './details.jsx';
 import BookingFixed from './bookingFixed.jsx';
-
-const BodyContainerHeaderNav = styled.div`
-  &&&& {
-    display: block;
-    width: 100%;
-    min-height: 100%;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left:0;
-    padding: 0;
-  }
-`;
-
-const ModalFixed = styled.div`
-  &&&& { 
-    display: fixed;
-  }
-`;
-
-const theme = {
-  main: 'orange',
-  'box-sizing': 'border-box',
-  'font-family': "'Roboto', sans-serif",
-  'font-size': '14px',
-  'background': 'white',
-  'ine-height': '1.43',
-  'color': '#484848'
-};
 
 class App extends React.Component {
   constructor(props) {
@@ -84,27 +53,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <BodyContainerHeaderNav>
-          <ModalFixed>
-            <ShareModal
-              id="shareModal"
-              toggleShareModal={this.toggleShareModal}
-              selectModal={this.selectShareModal}
-              isModalShowing={this.state.isShowingShareModal}
-              isModalSelected={this.state.isShareModalSelected}
-            />
-          </ModalFixed>
-          <Banner
-          />
-          <ListingDisplay
-            listingData={this.state.listing}
+      <BodyContainerHeaderNav>
+        <ModalFixed>
+          <ShareModal
+            id="shareModal"
             toggleShareModal={this.toggleShareModal}
+            selectModal={this.selectShareModal}
+            isModalShowing={this.state.isShowingShareModal}
+            isModalSelected={this.state.isShareModalSelected}
           />
-          <Details listingData={this.state.listing} />
-          <BookingFixed listingData={this.state.listing} />
-        </BodyContainerHeaderNav>
-      </ThemeProvider>
+        </ModalFixed>
+        <Banner
+        />
+        <ListingDisplay
+          listingData={this.state.listing}
+          toggleShareModal={this.toggleShareModal}
+        />
+        <Details listingData={this.state.listing} />
+        <BookingFixed listingData={this.state.listing} />
+      </BodyContainerHeaderNav>
     );
   }
 }

@@ -1,0 +1,715 @@
+
+#headerNav {
+
+  #hnPageWideStyles {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background: white;
+    line-height: 1.43;
+    color: #484848;
+  }
+
+  .hnAppPageContainer {
+      display: block;
+      width: 100%;
+      min-height: 100%;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left:0;
+      padding: 0;
+    }
+
+  .hnmodalFixed {
+    display: fixed;
+  }
+
+  .hnBanner {
+
+    .hnBannerMain { 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 81px;
+    }
+    
+    .hnSearchContainer { 
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 81px;
+      
+      @media screen and (min-width: 769px) {
+        width: 60%;
+      }
+    }
+    
+    .hnDisplayRightNav { 
+      @media screen and (min-width: 1024px) {
+        display: block;
+      }
+      
+      @media screen and (max-width: 1024px) {
+        display: none;
+        width: 0px;
+      }
+    }
+  }
+
+  .hnBookingFixed {
+    .hnFixedBottom {
+      display: relative;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 81px;
+      background: white;
+      border-top: 1px solid #F2F2F2;
+      box-shadow: -0.5rem 0 0.5rem rgba(117,117,117,0.1);
+      z-index: 1000;
+    }
+    
+    .hnBodyContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+    
+    .hnFlexedBox {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: space-between;
+      margin: 0 2rem 0 2rem;
+    }
+
+    .fhnlexedBoxLeft {
+      display: none;
+      align-items: center;
+      height: 100%;
+      margin: 0 2rem 0 2rem;
+      @media screen and (min-width: 744px) {
+        display: flex;
+      }
+    }
+
+    .hnTitleSvg {
+      height: 44px;
+      font-size: 14px;
+      fill: rgb(145, 70, 105);
+    }
+
+    .hnNameRatingBox {
+      height: 100%;
+      margin: 0 0 0 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+    }
+
+    .hnNameBox {
+      font-size: 14px;
+      letter-spacing: .1rem;
+      font-weight: 500;
+      color: #767676;
+    }
+
+    .hnRatingBox {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    
+    .hnPriceContainer {
+      font-size: 16px;
+      font-weight: 300;
+      color: #484848;
+      margin: 0 2rem 0 2rem;
+    }
+
+    .hnPrice {
+      font-weight: 700;
+    }
+
+    .hnBookButton {
+      @media screen and (min-width: 560px) {
+        margin-left: 55%;
+      }
+
+      @media screen and (min-width: 580px) {
+        margin-left: 60%;
+      }
+
+      @media screen and (min-width: 600px) {
+        margin-left: 65%;
+      }
+
+      @media screen and (min-width: 620px) {
+        margin-left: 70%;
+      }
+
+      @media screen and (min-width: 640px) {
+        margin-left: 75%;
+      }
+
+      @media screen and (min-width: 660px) {
+        margin-left: 80%;
+      }
+
+      @media screen and (min-width: 680px) {
+        margin-left: 85%;
+      }
+
+      @media screen and (min-width: 744px) {
+        margin-left: 0%;
+      }
+
+      border-radius: 4px;
+      background: #914669;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      padding: 10px 8px;
+      height: 48px;
+      min-width: 174px;
+    }
+  }
+
+  .hndetails {
+    .hnBodyContainer { 
+      max-width: 95%;
+      margin: 3rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      @media screen and (min-width: 1024px) {
+        height: 288px;
+      }
+    }
+
+    .hnListingDetails { 
+      @media screen and (min-width: 1024px) {
+        min-width: 53%;
+        max-width: 53%;
+      }
+      min-width: 100%;
+    }
+
+    .hnDetailsList { 
+      display: flex;
+      align-items: center;
+      max-width: 500px;
+    }
+
+    .hnListItem { 
+      list-style: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 0 0.6rem;
+      color: #484848;
+    }
+
+    .hnDetailsBox { 
+      padding: 1rem;
+      font-weight: 300;
+      max-width: 400px;
+    }
+
+    .hnHostDetails { 
+      @media screen and (min-width: 1024px) {
+        width: 200px;
+      }
+      
+      display: flex;
+      @media screen and (max-width: 1024px) {
+        align-items: left;
+        margin: 5rem 5rem 5rem 0;
+        min-width: 100%;
+        order: 2;
+      }
+    }
+
+    .hnImage { 
+      float: left;
+      height: 88px;
+      width: 88px;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .hnHostDescription  { 
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75rem;
+      color: #484848;
+      margin-left: 1rem;
+      width: 100%;
+      @media screen and (min-width: 500px) {
+        width: 350px;
+      }
+    }
+
+    .hnHostedBy { 
+      font-size: 16px;
+      font-weight: 700;
+      color: #484848;
+      @media screen and (min-width: 1024px) {
+        margin: 0.5rem 0 0 1rem;
+      }
+      @media screen and (max-width: 1024px) {
+        margin: 0.5rem 0 0 2rem;
+      }
+    }
+
+    .hnFlex { 
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+    }
+
+    .hnDivider { 
+      @media screen and (min-width: 1024px) {
+        display: none;
+      }
+      display: block;
+    }
+  }
+
+  .hnListingDisplay {
+
+    .hnBodyContainer { 
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      @media screen and (min-width: 831px) {
+        margin-left: 1rem;
+      }
+    }
+
+    .hnTitleColumn { 
+      max-height: 272px;
+      min-width: 95%;
+      order: 2;
+      background: white;
+      padding: 40px;
+      
+      @media screen and (min-width: 830px) {
+        order: 1;
+        min-width: 30.888888%;
+        max-width: 30.888888%;
+        min-height: 428px;
+        max-height: 428px;
+        margin: 0 0.6% 0 0.6%;
+        background: #F2F2F2;
+      }
+      
+      @media screen and (min-width: 1130px) {
+        min-height: 536px;
+      }
+    }
+
+    .hnImageColumn { 
+      width: 100%;
+      height: 320px;
+      margin: 0 0.6% 0 0.6%;
+      position: relative;
+      max-width: 100%;
+
+      @media screen and (min-width: 450px) {
+        height: 428px;
+      }
+
+      @media screen and (min-width: 790px) {
+        height: 428px;
+      }
+
+      @media screen and (min-width: 830px) {
+        order: 2;
+        height: 456px;
+        min-width: 64.111111%;
+        max-width: 64.111111%;
+      }
+      
+      @media screen and (min-width: 1130px) {
+        height: 536px;
+        max-height: 536px;
+      }
+    }
+
+    .hnTitleSvg { 
+      height: 44px;
+      font-size: 14px;
+      fill: rgb(145, 70, 105);
+    }
+
+    .hnListingTitleBox { 
+      margin-top: 24px;
+    }
+
+    .hnListingTitle { 
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 46px;
+      color: #484848;
+      text-overflow: ellipsis;
+
+      @media screen and (min-width: 830px) {
+        font-size: 32px;
+      }
+
+      @media screen and (min-width: 930px) {
+        font-size: 38px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        font-size: 42px;
+      }
+    }
+
+    .hnListingImageBox { 
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0;
+
+      @media screen and (min-width: 790px) {
+        height: 428px;
+      }
+
+      @media screen and (min-width: 830px) {
+        height: 456px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        height: 428px;
+      }
+
+      @media screen and (min-width: 1130px) {
+        height: 536px;
+      }
+    }
+
+    .hnListingImage {
+      margin-bottom: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      max-height: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media screen and (min-width: 500px) {
+          max-height: 100%;
+          max-width: 100%;
+      }
+      @media screen and (min-width: 760px) {
+          height: 456px;
+          margin-left: 3%;
+        }
+
+      @media screen and (min-width: 830px) {
+        height: 428px;
+        margin: 0;
+      }
+
+      @media screen and (min-width: 1024px) {
+      }
+
+      @media screen and (min-width: 1130px) {
+        height: 536px;
+      }
+    }
+
+    .hnButtonContainer { 
+      z-index: 4;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100px;
+    }
+
+    .hnShareButton { 
+      height: 40px;
+      width: 40px;
+      color: rgba(0, 0, 0, 0.847);
+      cursor: pointer;
+      margin: 0;
+      background: white;
+      display: inline-block;
+      text-align: center;
+      line-height: 1;
+      border: 4px solid white;
+      border-radius: 4px;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .hnShareSpan { 
+      box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.14);
+    }
+
+    .hnShareSvg { 
+      height: 16px;
+      width: 16px;
+      display: block;
+      fill: currentColor;
+    }
+  }
+
+  .hnLogo {
+
+    .hnFlex { 
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+
+    .hnSvgOuter { 
+      font-weight: 700;
+      display: table-cell;
+      vertical-align: middle;
+      white-space: nowrap;
+      text-size-adjust: 100%;
+      padding: 4px 24px 0 24px;
+      cursor: pointer;
+    }
+
+    .hnSvgBox { 
+      display: inline-block;
+      white-space: nowrap;
+      font-weight: inherit;
+      text-align: center;
+      font-size: 34px;
+    }
+
+    .hnStyledSvg { 
+      height: 1em;
+      width: 1em;
+      display: block;
+      fill: rgb(145, 70, 105);
+      font-weight: inherit;
+    }
+
+    .hnModalSvg { 
+      display: block;
+      height: 1em;
+      width: 1em;
+      fill: #484848;
+    }
+
+    .hnNavModalButton { 
+      @media screen and (max-width: 1024px) {
+        display: block;
+        margin: 0 1.25rem 0 -1rem;
+        font-size: 9px;
+      }
+      display: none;
+    }
+  }
+
+  .hnRightNav {
+
+    .hnNavList { 
+      list-style: none;
+      display: flex;
+      align-items: center;
+      height: 81px;
+      margin-right: 1rem;
+    }
+
+    .hnListItem { 
+      font-size: 14px;
+      padding: 3rem 1rem 3rem 1rem;
+      text-align: center;
+      height: 81px;
+      border-bottom: 2px solid white;
+      &:hover {
+        border-bottom: 2px solid rgb(72,72,72);
+      }
+      cursor: pointer;
+      color: #484848;
+    }
+  }
+
+  .hnSearch {
+
+    .hnBodyContainer { 
+      animation-fill-mode:forwards;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 0.1rem 0.3rem rgba(118,118,118,0.3);
+
+      :hover {
+        box-shadow: 0 0.2rem 0.3rem rgba(118,118,118,0.3);
+      }
+      border-radius: 2px;
+      border: 1px solid rgba(118,118,118,0.1);
+
+      @media screen and (max-width: 1024px) {
+        min-width: 70%;
+        max-width: 70%;
+      }
+
+      @media screen and (min-width: 1024px) {
+        min-width: 460px;
+      }
+    }
+
+    .hnSearchIcon { 
+      font-size: 14px;
+      font-weight: 700;
+      padding: 0.8rem;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .hnStyledSvg { 
+      height: 18px;
+      width: 18px;
+      fill: rgb(72, 72, 72);
+    }
+
+    .hnInput { 
+      font-weight: 700;
+      display; inline-block;
+      animation-fill-mode: forwards;
+      border: none;
+      border-image-outset: 0px;
+      border-image-repeat: stretch;
+      border-image-source: none;
+      border-style: none;
+      height: 2.5rem;
+
+      :focus {
+        outline: none;
+      }
+
+      @media screen and (min-width: 830px) {
+        width: 360px;
+      }
+      @media screen and (max-width: 830px) {
+        min-width: 80%;
+        max-width: 80%;
+      }
+    }
+  }
+
+  .hnShareModal {
+
+    .hnModalInner { 
+      vertical-align: middle;
+      background: white;
+      position: absolute;
+      z-index: 5;
+      width: 376px;
+      max-height: 681px;
+      padding: 10px 24px 0px 24px;
+      margin: 4rem 0 0 30%;
+      overflow: auto;
+      box-shadow: 0 0.01rem 0.8rem rgba(118,118,118,0.3);
+    }
+
+    .hnModalHeader { 
+      font-size: 14px;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    .hnCloseButton { 
+      background: white;
+      border: 1px solid white;
+      padding: 20px;
+      margin: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .hnSvgBox { 
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .hnSvgButton { 
+      margin: 7px;
+      width: 16px;
+      height: 16px;
+      display: block;
+      fill: rgb(118, 118, 118);
+    }
+  }
+
+  .hnShareModalBody {
+
+    .hnModalBody { 
+      width: 504;
+      padding-bottom: 3rem;
+      margin: auto;
+    }
+
+    .hnTitle { 
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.25rem;
+      padding: 2px 0 2px 0;
+      color: #484848;
+    }
+
+    .hnSubTitle { 
+      font-size: 14px;
+      font-weight: 300;
+      color: #484848;
+      line-height: 1.2857142857142858em;
+      margin-top: 0.5rem;
+    }
+
+    .hnSection { 
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.43;
+      color: #484848;
+    }
+
+    .hnBox { 
+      padding: 10px 0 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .hnSvgBox { 
+      height: 18px;
+      width: 18px;
+      display: block;
+      fill: rgb(72, 72, 72);
+      margin-right: 8px;
+    }
+
+    .hnLinkName { 
+      color: rgb(145, 70, 105);
+    }
+  }
+
+  .hnStars {
+
+    .hnStarBox { 
+      display: inline-block;
+      font-size: 10px;
+      color: #914669;
+      margin: 0 0.25rem 0.5rem 0;
+    }
+  }
+}
