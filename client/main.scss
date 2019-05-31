@@ -1,16 +1,20 @@
+body {
+  margin-bottom: 500px;
+}
 
-#headerNav {
+.headerNav {
 
-  #hnPageWideStyles {
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    background: white;
-    line-height: 1.43;
-    color: #484848;
-  }
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  background: white;
+  line-height: 1.43;
+  color: #484848;
+  width: 100%;
 
-  .hnAppPageContainer {
+  #hnApp {
+
+    .hnAppPageContainer {
       display: block;
       width: 100%;
       min-height: 100%;
@@ -21,12 +25,13 @@
       left:0;
       padding: 0;
     }
-
-  .hnmodalFixed {
-    display: fixed;
+    
+    .hnModalFixed {
+      display: fixed;
+    }
   }
-
-  .hnBanner {
+    
+  #hnBanner {
 
     .hnBannerMain { 
       display: flex;
@@ -59,7 +64,7 @@
     }
   }
 
-  .hnBookingFixed {
+  #hnBookingFixed {
     .hnFixedBottom {
       display: relative;
       position: fixed;
@@ -181,7 +186,7 @@
     }
   }
 
-  .hndetails {
+  #hndetails {
     .hnBodyContainer { 
       max-width: 95%;
       margin: 3rem auto;
@@ -221,16 +226,17 @@
     }
 
     .hnHostDetails { 
-      @media screen and (min-width: 1024px) {
-        width: 200px;
-      }
-      
       display: flex;
+
       @media screen and (max-width: 1024px) {
         align-items: left;
         margin: 5rem 5rem 5rem 0;
         min-width: 100%;
         order: 2;
+      }
+
+      @media screen and (min-width: 1024px) {
+        width: 200px;
       }
     }
 
@@ -280,7 +286,8 @@
     }
   }
 
-  .hnListingDisplay {
+  #hnListingDisplay {
+    margin-top: 3px;
 
     .hnBodyContainer { 
       display: flex;
@@ -300,8 +307,8 @@
       
       @media screen and (min-width: 830px) {
         order: 1;
-        min-width: 30.888888%;
-        max-width: 30.888888%;
+        min-width: 31.55555%;
+        max-width: 31.55555%;
         min-height: 428px;
         max-height: 428px;
         margin: 0 0.6% 0 0.6%;
@@ -331,8 +338,8 @@
       @media screen and (min-width: 830px) {
         order: 2;
         height: 456px;
-        min-width: 64.111111%;
-        max-width: 64.111111%;
+        min-width: 66%;
+        max-width: 66%;
       }
       
       @media screen and (min-width: 1130px) {
@@ -466,7 +473,7 @@
     }
   }
 
-  .hnLogo {
+  #hnLogo {
 
     .hnFlex { 
       display: flex;
@@ -517,7 +524,7 @@
     }
   }
 
-  .hnRightNav {
+  #hnRightNav {
 
     .hnNavList { 
       list-style: none;
@@ -541,7 +548,7 @@
     }
   }
 
-  .hnSearch {
+  #hnSearch {
 
     .hnBodyContainer { 
       animation-fill-mode:forwards;
@@ -550,9 +557,7 @@
       align-items: center;
       box-shadow: 0 0.1rem 0.3rem rgba(118,118,118,0.3);
 
-      :hover {
-        box-shadow: 0 0.2rem 0.3rem rgba(118,118,118,0.3);
-      }
+      
       border-radius: 2px;
       border: 1px solid rgba(118,118,118,0.1);
 
@@ -564,6 +569,10 @@
       @media screen and (min-width: 1024px) {
         min-width: 460px;
       }
+    }
+
+    .hnBodyContainer:hover {
+      box-shadow: 0 0.2rem 0.3rem rgba(118,118,118,0.3);
     }
 
     .hnSearchIcon { 
@@ -582,7 +591,7 @@
 
     .hnInput { 
       font-weight: 700;
-      display; inline-block;
+      display: inline-block;
       animation-fill-mode: forwards;
       border: none;
       border-image-outset: 0px;
@@ -590,10 +599,6 @@
       border-image-source: none;
       border-style: none;
       height: 2.5rem;
-
-      :focus {
-        outline: none;
-      }
 
       @media screen and (min-width: 830px) {
         width: 360px;
@@ -603,9 +608,18 @@
         max-width: 80%;
       }
     }
+
+    .hnInput:focus {
+      outline: none;
+    }
+
+    .hnInput:hover {
+      box-shadow: none;
+      outline: none;
+    }
   }
 
-  .hnShareModal {
+  #hnShareModal {
 
     .hnModalInner { 
       vertical-align: middle;
@@ -653,7 +667,7 @@
     }
   }
 
-  .hnShareModalBody {
+  #hnShareModalBody {
 
     .hnModalBody { 
       width: 504;
@@ -703,7 +717,7 @@
     }
   }
 
-  .hnStars {
+  #hnStars {
 
     .hnStarBox { 
       display: inline-block;

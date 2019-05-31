@@ -14,9 +14,13 @@ const StarBox = styled.div`
 const Stars = ({ starCount }) => {
 
   return (
-    <StarBox>
-      {_.map(_.range(starCount), (k) => <i key={k} className="fas fa-star"></i>)}
-    </StarBox>
+    <div className="headerNav">
+      <div id="hnStars">
+        <div className="hnStarBox">
+          {_.map(_.range(starCount), (k) => <i key={k} className="fas fa-star"></i>)}
+        </div>
+      </div>
+    </div>
   );
 };
 

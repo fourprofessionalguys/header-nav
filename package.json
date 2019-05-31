@@ -1,5 +1,5 @@
 {
-  "name": "cdag22-proxy",
+  "name": "header-nav",
   "version": "1.0.0",
   "description": "Proxy server for airbnb clone project",
   "main": "server.js",
@@ -7,6 +7,7 @@
     "test": "jest",
     "start": "nodemon server/server.js",
     "react-dev": "webpack -d --watch",
+    "sass-dev": "sass --watch client:public",
     "seed": "knex migrate:rollback; knex migrate:latest; knex seed:run;"
   },
   "jest": {
@@ -48,6 +49,8 @@
     "jest": "^24.8.0",
     "jest-dom": "^3.4.0",
     "jest-enzyme": "^7.0.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "sharp": "^0.22.1",
     "supertest": "^4.0.2",
     "webpack": "^4.32.2",

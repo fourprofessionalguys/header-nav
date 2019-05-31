@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import style from './../main.scss';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';
@@ -53,25 +54,29 @@ class App extends React.Component {
 
   render() {
     return (
-      <BodyContainerHeaderNav>
-        <ModalFixed>
-          <ShareModal
-            id="shareModal"
-            toggleShareModal={this.toggleShareModal}
-            selectModal={this.selectShareModal}
-            isModalShowing={this.state.isShowingShareModal}
-            isModalSelected={this.state.isShareModalSelected}
-          />
-        </ModalFixed>
-        <Banner
-        />
-        <ListingDisplay
-          listingData={this.state.listing}
-          toggleShareModal={this.toggleShareModal}
-        />
-        <Details listingData={this.state.listing} />
-        <BookingFixed listingData={this.state.listing} />
-      </BodyContainerHeaderNav>
+      <div className="headerNav">
+        <div id="hnApp">
+          <div className="hnAppPageContainer">
+            <div className="hnModalFixed">
+              <ShareModal
+                id="shareModal"
+                toggleShareModal={this.toggleShareModal}
+                selectModal={this.selectShareModal}
+                isModalShowing={this.state.isShowingShareModal}
+                isModalSelected={this.state.isShareModalSelected}
+              />
+            </div>
+            <Banner
+            />
+            <ListingDisplay
+              listingData={this.state.listing}
+              toggleShareModal={this.toggleShareModal}
+            />
+            <Details listingData={this.state.listing} />
+            <BookingFixed listingData={this.state.listing} />
+          </div>
+        </div>
+      </div>
     );
   }
 }

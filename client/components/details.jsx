@@ -123,33 +123,37 @@ const Divider = styled.hr`
 const Details = ({ listingData }) => {
 
   return (
-    <Main>
-      <ListingDetails>
-        <DetailsList>
-          <ListItem id="guestsCount">{listingData.guests} guests</ListItem>
-          <ListItem id="bedroomCount">{listingData.bedrooms} bedrooms</ListItem>
-          <ListItem id="bedsCount">{listingData.beds} beds</ListItem>
-          <ListItem id="bathsCount">{listingData.baths} bathrooms</ListItem>
-        </DetailsList>
-        <DetailsBox id="listingDescription">
-          {listingData.description}
-        </DetailsBox>
-        <Divider></Divider>
-      </ListingDetails>
-      <HostDetails className="col-5">
-        <Image id="hostPhoto" src={listingData.hostPhoto} alt="" />
-        <Flex>
-          <HostDescription id="hostDescription">
-            "{listingData.hostDescription}"
-          </HostDescription>
-          <HostedBy id="hostedBy">
-            Hosted by {listingData.hostName}
-          </HostedBy>
-          <hr />
-        </Flex>
-        <Divider></Divider>
-      </HostDetails>
-    </Main>
+    <div className="headerNav">
+      <div id="hndetails">
+        <div className="hnBodyContainer">
+          <div className="hnListingDetails">
+            <ul className="hnDetailsList">
+              <li id="guestsCount" className="hnListItem">{listingData.guests} guests</li>
+              <li id="bedroomCount" className="hnListItem">{listingData.bedrooms} bedrooms</li>
+              <li id="bedsCount" className="hnListItem">{listingData.beds} beds</li>
+              <li id="bathsCount" className="hnListItem">{listingData.baths} bathrooms</li>
+            </ul>
+            <div id="listingDescription" className="hnDetailsBox">
+              {listingData.description}
+            </div>
+            <hr className="hnDivider" />
+          </div>
+          <div className="hnHostDetails">
+            <img id="hostPhoto" className="hnImage" src={listingData.hostPhoto} alt="" />
+            <div className="hnFlex">
+              <div id="hostDescription" className="hnHostDescription">
+                "{listingData.hostDescription}"
+          </div>
+              <div id="hostedBy" className="hnHostedBy">
+                Hosted by {listingData.hostName}
+              </div>
+              <hr />
+            </div>
+            <hr className="hnDivider" />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
