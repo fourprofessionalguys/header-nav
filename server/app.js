@@ -16,8 +16,8 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/listings/:listingId', (req, res) => {
-  let listing_id = req.params.listingId;
+app.get('/api/listings/header/:id', (req, res) => {
+  let listing_id = req.params.id;
   if ((/(^[1-9]{1}[0-9]{0,1}$)|^100$/).test(listing_id)) {
     database('listings').select('*').where({ 'id': listing_id }).then(listingData => {
       database('hosts').select('*').where({ 'id': listingData[0].host_id }).then(hostData => {

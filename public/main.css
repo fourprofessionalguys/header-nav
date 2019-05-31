@@ -354,7 +354,7 @@ body {
   margin-top: 24px;
 }
 .headerNav #hnListingDisplay .hnListingTitle {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 300;
   line-height: 46px;
   color: #484848;
@@ -362,12 +362,12 @@ body {
 }
 @media screen and (min-width: 830px) {
   .headerNav #hnListingDisplay .hnListingTitle {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 @media screen and (min-width: 930px) {
   .headerNav #hnListingDisplay .hnListingTitle {
-    font-size: 38px;
+    font-size: 28px;
   }
 }
 @media screen and (min-width: 1024px) {

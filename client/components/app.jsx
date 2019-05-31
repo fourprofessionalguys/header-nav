@@ -36,7 +36,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    Axios(`http://localhost:3001/listings/${Math.floor(Math.random() * 99) + 1}`)
+    Axios(`http://localhost:3001/api/listings/header/${Math.floor(Math.random() * 99) + 1}`)
       .then(res => res.data)
       .then(data => {
         this.setState({
