@@ -27,4 +27,4 @@ const buildListingPhotos = function buildListingPhotos() {
 
 buildUserPhotos().then(console.log)
 
-buildListingPhotos().then(console.log)
+// buildListingPhotos().then(console.log)

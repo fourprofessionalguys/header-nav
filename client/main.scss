@@ -10,7 +10,6 @@ body {
   background: white;
   line-height: 1.43;
   color: #484848;
-  width: 100%;
 
   #hnApp {
 
@@ -35,8 +34,7 @@ body {
 
     .hnBannerMain { 
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      align-items: left;
       width: 100%;
       height: 81px;
     }
@@ -186,7 +184,7 @@ body {
     }
   }
 
-  #hndetails {
+  #hnDetails {
     .hnBodyContainer { 
       max-width: 95%;
       margin: 3rem auto;
@@ -242,6 +240,8 @@ body {
 
     .hnImage { 
       float: left;
+      min-height: 88px;
+      min-width: 88px;
       height: 88px;
       width: 88px;
       display: block;
@@ -299,7 +299,8 @@ body {
     }
 
     .hnTitleColumn { 
-      max-height: 272px;
+      min-height: 400px;
+      max-height: 400px;
       min-width: 95%;
       order: 2;
       background: white;
@@ -474,6 +475,7 @@ body {
   }
 
   #hnLogo {
+    max-width: 100px;
 
     .hnFlex { 
       display: flex;
@@ -548,6 +550,7 @@ body {
     }
   }
 
+
   #hnSearch {
 
     .hnBodyContainer { 
@@ -560,13 +563,46 @@ body {
       
       border-radius: 2px;
       border: 1px solid rgba(118,118,118,0.1);
+      width: 100%;
+      min-width: 110%;
 
-      @media screen and (max-width: 1024px) {
-        min-width: 70%;
-        max-width: 70%;
+      @media screen and (min-width: 380px) {
+        min-width: 280px;
       }
 
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 400px) {
+        min-width: 300px;
+      }
+
+      @media screen and (min-width: 420px) {
+        min-width: 320px;
+      }
+
+      @media screen and (min-width: 440px) {
+        min-width: 340px;
+      }
+
+      @media screen and (min-width: 460px) {
+        min-width: 360px;
+      }
+
+      @media screen and (min-width: 480px) {
+        min-width: 380px;
+      }
+
+      @media screen and (min-width: 500px) {
+        min-width: 400px;
+      }
+
+      @media screen and (min-width: 520px) {
+        min-width: 420px;
+      }
+
+      @media screen and (min-width: 540px) {
+        min-width: 440px;
+      }
+      
+      @media screen and (min-width: 577px) {
         min-width: 460px;
       }
     }
@@ -599,10 +635,14 @@ body {
       border-image-source: none;
       border-style: none;
       height: 2.5rem;
+      width: 90%;
 
       @media screen and (min-width: 830px) {
         width: 360px;
+        min-width: 90%;
+        max-width: 90%;
       }
+
       @media screen and (max-width: 830px) {
         min-width: 80%;
         max-width: 80%;
@@ -627,7 +667,7 @@ body {
       position: absolute;
       z-index: 5;
       width: 376px;
-      max-height: 681px;
+      max-height: 700px;
       padding: 10px 24px 0px 24px;
       margin: 4rem 0 0 30%;
       overflow: auto;

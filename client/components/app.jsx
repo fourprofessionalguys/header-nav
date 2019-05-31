@@ -14,13 +14,11 @@ class App extends React.Component {
     this.state = {
       listing: {},
       isSearchSelected: false,
-      isShowingShareModal: false,
-      isShareModalSelected: false
+      isShowingShareModal: false
     };
 
     this.toggleSearchGrow = this.toggleSearchGrow.bind(this);
     this.toggleShareModal = this.toggleShareModal.bind(this);
-    this.selectShareModal = this.selectShareModal.bind(this);
   }
 
   toggleSearchGrow() {
@@ -36,11 +34,6 @@ class App extends React.Component {
     });
   }
 
-  selectShareModal() {
-    this.setState({
-      isShareModalSelected: true
-    });
-  }
 
   componentDidMount() {
     Axios(`http://localhost:3001/listings/${Math.floor(Math.random() * 99) + 1}`)
@@ -61,13 +54,10 @@ class App extends React.Component {
               <ShareModal
                 id="shareModal"
                 toggleShareModal={this.toggleShareModal}
-                selectModal={this.selectShareModal}
                 isModalShowing={this.state.isShowingShareModal}
-                isModalSelected={this.state.isShareModalSelected}
               />
             </div>
-            <Banner
-            />
+            <Banner />
             <ListingDisplay
               listingData={this.state.listing}
               toggleShareModal={this.toggleShareModal}
