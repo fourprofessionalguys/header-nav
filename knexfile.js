@@ -6,9 +6,9 @@ module.exports = {
     client: 'pg',
     connection: {
       user: 'postgres',
-      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      host: 'airbnbclone.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
       password: 'cdw3aws3#',
-      database: 'headerdb'
+      database: 'header'
     },
     useNullAsDefault: true,
     charset: 'utf8',
@@ -24,9 +24,9 @@ module.exports = {
     client: 'pg',
     connection: {
       user: 'postgres',
-      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      host: 'airbnbclone.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
       password: 'cdw3aws3#',
-      database: 'headerdb'
+      database: 'header'
     },
     migrations: {
       directory: __dirname + '/server/db/migrations'
@@ -40,9 +40,9 @@ module.exports = {
     client: 'postgresql',
     connection: {
       user: 'postgres',
-      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      host: 'airbnbclone.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
       password: 'cdw3aws3#',
-      database: 'headerdb'
+      database: 'header'
     },
     pool: {
       min: 2,
@@ -57,9 +57,9 @@ module.exports = {
     client: 'postgresql',
     connection: {
       user: 'postgres',
-      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      host: 'airbnbclone.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
       password: 'cdw3aws3#',
-      database: 'headerdb'
+      database: 'header'
     },
     pool: {
       min: 2,
