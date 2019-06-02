@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import style from './../main.scss';
 import Banner from './banner.jsx';
 import ListingDisplay from './listingDisplay.jsx';
 import ShareModal from './shareModal.jsx';

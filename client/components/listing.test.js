@@ -10,6 +10,6 @@ describe('Listing Display', () => {
     const wrapper = shallow(<ListingDisplay toggleShareModal={toggler} listingData={{ title: 'Beautiful', listingPhoto: 'https://unsplash.com/photos/0m7Ks0Z00Ro' }} />);
 
     expect(wrapper.find('#listingTitle').text()).toEqual('Beautiful');
-    expect(wrapper.find('#listingPhotoBox').prop('listingPhoto')).toEqual('https://unsplash.com/photos/0m7Ks0Z00Ro');
+    expect(wrapper.find('.hnListingImage').prop('src')).toEqual('https://unsplash.com/photos/0m7Ks0Z00Ro');
   });
 });

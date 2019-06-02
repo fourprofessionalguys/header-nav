@@ -19,6 +19,6 @@ describe('Booking Fixed Banner', () => {
   it('displays proper number of stars for listing', () => {
     const wrapper = shallow(<Stars starCount={5} />);
 
-    expect(wrapper.children().length).toEqual(5);
+    expect(wrapper.find('.hnStarBox').children().length).toEqual(5);
   });
 });

@@ -11,7 +11,7 @@ describe('test get route', () => {
   });
 
   test('route /listings should respond with 201 and listing data', (done) => {
-    request(app).get('/listings/1').then(response => {
+    request(app).get('/api/listings/header/1').then(response => {
       const listingProps = Object.keys(response.body);
 
       expect(response.statusCode).toEqual(201);
@@ -22,7 +22,7 @@ describe('test get route', () => {
   });
 
   test('route /listings should respond with status code 400 when listingId is not between 1 and 100 for get to /reviews/:listingId', (done) => {
-    request(app).get('/listings/101').then(response => {
+    request(app).get('/api/listings/header/101').then(response => {
       expect(response.statusCode).toEqual(400);
       done();
     });
