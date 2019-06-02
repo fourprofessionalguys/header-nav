@@ -4,7 +4,12 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://cj:student@localhost/airbnb_clone_listings',
+    connection: {
+      user: 'postgres',
+      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      password: 'cdw3aws3#',
+      database: 'headerdb'
+    },
     useNullAsDefault: true,
     charset: 'utf8',
     migrations: {
@@ -17,7 +22,12 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://cj:student@localhost/airbnb_clone_listings',
+    connection: {
+      user: 'postgres',
+      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      password: 'cdw3aws3#',
+      database: 'headerdb'
+    },
     migrations: {
       directory: __dirname + '/server/db/migrations'
     },
@@ -29,9 +39,10 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'airbnb_clone_listings',
-      user: 'cj',
-      password: 'student'
+      user: 'postgres',
+      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      password: 'cdw3aws3#',
+      database: 'headerdb'
     },
     pool: {
       min: 2,
@@ -45,9 +56,10 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'airbnb_clone_listings',
-      user: 'cj',
-      password: 'student'
+      user: 'postgres',
+      host: 'header.cs9w0pu3iftx.us-east-1.rds.amazonaws.com',
+      password: 'cdw3aws3#',
+      database: 'headerdb'
     },
     pool: {
       min: 2,
